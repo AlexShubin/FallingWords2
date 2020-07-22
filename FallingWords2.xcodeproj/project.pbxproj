@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1715023224C88486008AFA35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023124C88486008AFA35 /* AppDelegate.swift */; };
+		1715023424C88486008AFA35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023324C88486008AFA35 /* SceneDelegate.swift */; };
+		1715023624C88486008AFA35 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023524C88486008AFA35 /* GameView.swift */; };
+		1715023824C88487008AFA35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715023724C88487008AFA35 /* Assets.xcassets */; };
+		1715023B24C88487008AFA35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715023A24C88487008AFA35 /* Preview Assets.xcassets */; };
+		1715023E24C88487008AFA35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1715023C24C88487008AFA35 /* LaunchScreen.storyboard */; };
+		1715024924C88487008AFA35 /* FallingWords2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715024824C88487008AFA35 /* FallingWords2Tests.swift */; };
+		1715025724C886BC008AFA35 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025624C886BC008AFA35 /* GameData.swift */; };
+		1715025924C88E34008AFA35 /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025824C88E34008AFA35 /* GameResults.swift */; };
+		1715025B24C8907A008AFA35 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025A24C8907A008AFA35 /* AppState.swift */; };
+		1715025E24C8A2B4008AFA35 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025D24C8A2B4008AFA35 /* TabBarView.swift */; };
+		1715026024C8A579008AFA35 /* Image+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025F24C8A579008AFA35 /* Image+.swift */; };
+		1715026224C8A709008AFA35 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715026124C8A709008AFA35 /* GameStartView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1715024524C88487008AFA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715022624C88486008AFA35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1715022D24C88486008AFA35;
+			remoteInfo = FallingWords2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1715022E24C88486008AFA35 /* FallingWords2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1715023124C88486008AFA35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1715023324C88486008AFA35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1715023524C88486008AFA35 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		1715023724C88487008AFA35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1715023A24C88487008AFA35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1715023D24C88487008AFA35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1715023F24C88487008AFA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1715024424C88487008AFA35 /* FallingWords2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingWords2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1715024824C88487008AFA35 /* FallingWords2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWords2Tests.swift; sourceTree = "<group>"; };
+		1715024A24C88487008AFA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1715025624C886BC008AFA35 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		1715025824C88E34008AFA35 /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
+		1715025A24C8907A008AFA35 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		1715025D24C8A2B4008AFA35 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1715025F24C8A579008AFA35 /* Image+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+.swift"; sourceTree = "<group>"; };
+		1715026124C8A709008AFA35 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1715022B24C88486008AFA35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1715024124C88487008AFA35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1715022524C88486008AFA35 = {
+			isa = PBXGroup;
+			children = (
+				1715023024C88486008AFA35 /* FallingWords2 */,
+				1715024724C88487008AFA35 /* FallingWords2Tests */,
+				1715022F24C88486008AFA35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1715022F24C88486008AFA35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1715022E24C88486008AFA35 /* FallingWords2.app */,
+				1715024424C88487008AFA35 /* FallingWords2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1715023024C88486008AFA35 /* FallingWords2 */ = {
+			isa = PBXGroup;
+			children = (
+				1715025C24C8A294008AFA35 /* Views */,
+				1715025324C884FD008AFA35 /* Models */,
+				1715023124C88486008AFA35 /* AppDelegate.swift */,
+				1715023324C88486008AFA35 /* SceneDelegate.swift */,
+				1715025F24C8A579008AFA35 /* Image+.swift */,
+				1715025A24C8907A008AFA35 /* AppState.swift */,
+				1715023724C88487008AFA35 /* Assets.xcassets */,
+				1715023C24C88487008AFA35 /* LaunchScreen.storyboard */,
+				1715023F24C88487008AFA35 /* Info.plist */,
+				1715023924C88487008AFA35 /* Preview Content */,
+			);
+			path = FallingWords2;
+			sourceTree = "<group>";
+		};
+		1715023924C88487008AFA35 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1715023A24C88487008AFA35 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1715024724C88487008AFA35 /* FallingWords2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1715024824C88487008AFA35 /* FallingWords2Tests.swift */,
+				1715024A24C88487008AFA35 /* Info.plist */,
+			);
+			path = FallingWords2Tests;
+			sourceTree = "<group>";
+		};
+		1715025324C884FD008AFA35 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1715025624C886BC008AFA35 /* GameData.swift */,
+				1715025824C88E34008AFA35 /* GameResults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1715025C24C8A294008AFA35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1715023524C88486008AFA35 /* GameView.swift */,
+				1715025D24C8A2B4008AFA35 /* TabBarView.swift */,
+				1715026124C8A709008AFA35 /* GameStartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1715022D24C88486008AFA35 /* FallingWords2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1715024D24C88487008AFA35 /* Build configuration list for PBXNativeTarget "FallingWords2" */;
+			buildPhases = (
+				1715022A24C88486008AFA35 /* Sources */,
+				1715022B24C88486008AFA35 /* Frameworks */,
+				1715022C24C88486008AFA35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FallingWords2;
+			productName = FallingWords2;
+			productReference = 1715022E24C88486008AFA35 /* FallingWords2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1715024324C88487008AFA35 /* FallingWords2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1715025024C88487008AFA35 /* Build configuration list for PBXNativeTarget "FallingWords2Tests" */;
+			buildPhases = (
+				1715024024C88487008AFA35 /* Sources */,
+				1715024124C88487008AFA35 /* Frameworks */,
+				1715024224C88487008AFA35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1715024624C88487008AFA35 /* PBXTargetDependency */,
+			);
+			name = FallingWords2Tests;
+			productName = FallingWords2Tests;
+			productReference = 1715024424C88487008AFA35 /* FallingWords2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1715022624C88486008AFA35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Alex Shubin";
+				TargetAttributes = {
+					1715022D24C88486008AFA35 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					1715024324C88487008AFA35 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 1715022D24C88486008AFA35;
+					};
+				};
+			};
+			buildConfigurationList = 1715022924C88486008AFA35 /* Build configuration list for PBXProject "FallingWords2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1715022524C88486008AFA35;
+			productRefGroup = 1715022F24C88486008AFA35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1715022D24C88486008AFA35 /* FallingWords2 */,
+				1715024324C88487008AFA35 /* FallingWords2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1715022C24C88486008AFA35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1715023E24C88487008AFA35 /* LaunchScreen.storyboard in Resources */,
+				1715023B24C88487008AFA35 /* Preview Assets.xcassets in Resources */,
+				1715023824C88487008AFA35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1715024224C88487008AFA35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1715022A24C88486008AFA35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1715023224C88486008AFA35 /* AppDelegate.swift in Sources */,
+				1715025724C886BC008AFA35 /* GameData.swift in Sources */,
+				1715026224C8A709008AFA35 /* GameStartView.swift in Sources */,
+				1715025E24C8A2B4008AFA35 /* TabBarView.swift in Sources */,
+				1715023424C88486008AFA35 /* SceneDelegate.swift in Sources */,
+				1715025B24C8907A008AFA35 /* AppState.swift in Sources */,
+				1715026024C8A579008AFA35 /* Image+.swift in Sources */,
+				1715023624C88486008AFA35 /* GameView.swift in Sources */,
+				1715025924C88E34008AFA35 /* GameResults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1715024024C88487008AFA35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1715024924C88487008AFA35 /* FallingWords2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1715024624C88487008AFA35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1715022D24C88486008AFA35 /* FallingWords2 */;
+			targetProxy = 1715024524C88487008AFA35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1715023C24C88487008AFA35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1715023D24C88487008AFA35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1715024B24C88487008AFA35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1715024C24C88487008AFA35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1715024E24C88487008AFA35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FallingWords2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FallingWords2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.FallingWords2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1715024F24C88487008AFA35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"FallingWords2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = FallingWords2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.FallingWords2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1715025124C88487008AFA35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FallingWords2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.FallingWords2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FallingWords2.app/FallingWords2";
+			};
+			name = Debug;
+		};
+		1715025224C88487008AFA35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FallingWords2Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.FallingWords2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FallingWords2.app/FallingWords2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1715022924C88486008AFA35 /* Build configuration list for PBXProject "FallingWords2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1715024B24C88487008AFA35 /* Debug */,
+				1715024C24C88487008AFA35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1715024D24C88487008AFA35 /* Build configuration list for PBXNativeTarget "FallingWords2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1715024E24C88487008AFA35 /* Debug */,
+				1715024F24C88487008AFA35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1715025024C88487008AFA35 /* Build configuration list for PBXNativeTarget "FallingWords2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1715025124C88487008AFA35 /* Debug */,
+				1715025224C88487008AFA35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1715022624C88486008AFA35 /* Project object */;
+}
