@@ -22,7 +22,7 @@ class AppState: ObservableObject {
         gameData.rounds[min(roundNumber, gameData.rounds.count - 1)]
     }
 
-    func accept(_ appEvent:  AppEvent) {
+    func accept(_ appEvent: AppEvent) {
         switch appEvent {
         case .answer(let isCorrect):
             if isCorrect == currentRound.isTranslationCorrect {
