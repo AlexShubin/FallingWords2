@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct GameStartView: View {
-    let appState: AppState
+    @ObservedObject var appState: AppState
 
     var body: some View {
         NavigationView {
             NavigationLink(
                 destination: GameView(appState: appState),
+                isActive: $appState.gameStarted,
                 label: { Text("Start game") }
             )
         }

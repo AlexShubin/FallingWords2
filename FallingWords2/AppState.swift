@@ -16,9 +16,10 @@ class AppState: ObservableObject {
     @Published var gameData = GameData.default
     @Published var roundNumber = 0
     @Published var gameResults = GameResults.empty
+    @Published var gameStarted = false
 
     var currentRound: RoundData {
-        gameData.rounds[self.roundNumber]
+        gameData.rounds[min(roundNumber, gameData.rounds.count - 1)]
     }
 
     func accept(_ appEvent:  AppEvent) {
@@ -30,6 +31,9 @@ class AppState: ObservableObject {
                 gameResults.wrongAnswers += 1
             }
             roundNumber += 1
+            if roundNumber >= gameData.rounds.count {
+                gameStarted = false
+            }
         }
     }
 }
