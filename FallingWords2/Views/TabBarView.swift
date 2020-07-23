@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct TabBarView: View {
-    let appState: AppState
+    let appStore: AppStore
 
     var body: some View {
         TabView{
-            GameStartView(appState: appState).tabItem {
+            GameStartView(appStore: appStore).tabItem {
                     Image.game
                     Text("Game")
             }
@@ -31,6 +31,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(appState: AppState())
+        TabBarView(appStore: AppStore())
     }
 }

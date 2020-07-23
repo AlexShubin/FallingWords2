@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct GameStartView: View {
-    @ObservedObject var appState: AppState
+    @ObservedObject var appStore: AppStore
 
     var body: some View {
         NavigationView {
             NavigationLink(
-                destination: GameView(appState: appState),
-                isActive: $appState.gameStarted,
+                destination: GameView(appStore: appStore),
+                isActive: $appStore.state.gameStarted,
                 label: { Text("Start game") }
             )
         }
@@ -24,6 +24,6 @@ struct GameStartView: View {
 
 struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
-       GameStartView(appState: AppState())
+       GameStartView(appStore: AppStore())
     }
 }
