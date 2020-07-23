@@ -11,7 +11,6 @@ import SwiftUI
 extension Image {
     static let game = Image(systemName: "gamecontroller.fill")
     static let list = Image(systemName: "list.dash")
-    static let gear = Image(systemName: "gear")
 }
 
 

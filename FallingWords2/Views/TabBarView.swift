@@ -17,13 +17,9 @@ struct TabBarView: View {
                     Image.game
                     Text("Game")
             }
-            Text("1").tabItem {
+            ScoreHistoryView(appStore: appStore).tabItem {
                     Image.list
                     Text("Score")
-            }
-            Text("1").tabItem {
-                    Image.gear
-                    Text("Settings")
             }
         }
     }
