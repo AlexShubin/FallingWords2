@@ -51,6 +51,6 @@ struct ScoreHistoryView_Previews: PreviewProvider {
             .init(timestamp: Date(timeIntervalSinceNow: 20),
             results: .init(rightAnswers: 1, wrongAnswers: 5))
         ]
-        return ScoreHistoryView(appStore: AppStore(state: state))
+        return ScoreHistoryView(appStore: AppStore(state: state, reducer: appReducer))
     }
 }

@@ -27,6 +27,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(appStore: AppStore())
+        TabBarView(appStore: AppStore(state: AppState(), reducer: appReducer))
     }
 }

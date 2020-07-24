@@ -48,6 +48,6 @@ struct GameStartView_Previews: PreviewProvider {
             .init(timestamp: Date(),
                   results: .init(rightAnswers: 1, wrongAnswers: 1))
         ]
-        return GameStartView(appStore: AppStore(state: state))
+        return GameStartView(appStore: AppStore(state: state, reducer: appReducer))
     }
 }

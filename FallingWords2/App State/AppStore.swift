@@ -10,12 +10,14 @@ import Combine
 
 class AppStore: ObservableObject {
     @Published var state: AppState
+    private let reducer: (inout AppState, AppEvent) -> Void
 
-    init(state: AppState = AppState()) {
+    init(state: AppState, reducer: @escaping (inout AppState, AppEvent) -> Void) {
         self.state = state
+        self.reducer = reducer
     }
 
     func accept(_ event: AppEvent) {
-        appReducer(state: &state, event: event)
+        reducer(&state, event)
     }
 }
