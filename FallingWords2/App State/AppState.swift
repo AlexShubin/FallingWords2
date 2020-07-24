@@ -11,6 +11,7 @@ import Foundation
 enum AppEvent  {
     case answer(isCorrect: Bool)
     case removeActivities(indexSet: Set<Int>)
+    case gameStarted(Bool)
 }
 
 struct AppState {
@@ -36,10 +37,7 @@ func appReducer(state: inout AppState, event: AppEvent) {
         }
         if state.roundNumber == state.gameData.rounds.count - 1 {
             state.gameStarted = false
-            state.gameData = .default
-            state.roundNumber = 0
             state.scoreHistory.activities.insert(.init(timestamp: Date(), results: state.gameResults), at: 0)
-            state.gameResults = .empty
         } else {
             state.roundNumber += 1
         }
@@ -47,6 +45,13 @@ func appReducer(state: inout AppState, event: AppEvent) {
         indexSet.forEach {
             state.scoreHistory.activities.remove(at: $0)
         }
+    case .gameStarted(let started):
+        if started {
+            state.gameData = .default
+            state.roundNumber = 0
+            state.gameResults = .empty
+        }
+        state.gameStarted = started
     }
 }
 

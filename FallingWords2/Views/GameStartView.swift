@@ -12,17 +12,16 @@ struct GameStartView: View {
     @ObservedObject var appStore: AppStore
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 10) {
-                NavigationLink(
-                    destination: GameView(appStore: appStore),
-                    isActive: $appStore.state.gameStarted,
-                    label: { Text("Start game") }
-                )
-                    .font(.largeTitle)
-                results
-            }
+        VStack(spacing: 10) {
+            Button(action: {
+                self.appStore.accept(.gameStarted(true))
+            }, label: { Text("Start game") })
+                .font(.largeTitle)
+            results
         }
+        .sheet(isPresented: Binding.constant(appStore.state.gameStarted),
+               onDismiss: { self.appStore.accept(.gameStarted(false)) },
+               content: { GameView(appStore: self.appStore) })
     }
 
     private var results: AnyView {

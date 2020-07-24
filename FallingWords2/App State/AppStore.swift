@@ -9,7 +9,7 @@
 import Combine
 
 class AppStore: ObservableObject {
-    @Published var state: AppState
+    @Published private(set) var state: AppState
     private let reducer: (inout AppState, AppEvent) -> Void
 
     init(state: AppState, reducer: @escaping (inout AppState, AppEvent) -> Void) {
