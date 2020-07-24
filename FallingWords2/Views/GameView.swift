@@ -1,12 +1,5 @@
 import SwiftUI
 
-//struct GameViewState {
-//    let questionWord: String
-//    let answerWord: String
-//    let rightAnswers: String
-//    let wrongAnswers: String
-//}
-
 struct GameView: View {
     @ObservedObject var appStore: AppStore
 
