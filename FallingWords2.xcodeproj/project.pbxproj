@@ -13,7 +13,7 @@
 		1715023824C88487008AFA35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715023724C88487008AFA35 /* Assets.xcassets */; };
 		1715023B24C88487008AFA35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715023A24C88487008AFA35 /* Preview Assets.xcassets */; };
 		1715023E24C88487008AFA35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1715023C24C88487008AFA35 /* LaunchScreen.storyboard */; };
-		1715024924C88487008AFA35 /* FallingWords2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715024824C88487008AFA35 /* FallingWords2Tests.swift */; };
+		1715024924C88487008AFA35 /* RoundsDataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715024824C88487008AFA35 /* RoundsDataProviderTest.swift */; };
 		1715025724C886BC008AFA35 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025624C886BC008AFA35 /* GameData.swift */; };
 		1715025924C88E34008AFA35 /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025824C88E34008AFA35 /* GameResults.swift */; };
 		1715025B24C8907A008AFA35 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025A24C8907A008AFA35 /* AppState.swift */; };
@@ -46,7 +46,7 @@
 		1715023D24C88487008AFA35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1715023F24C88487008AFA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1715024424C88487008AFA35 /* FallingWords2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingWords2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1715024824C88487008AFA35 /* FallingWords2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWords2Tests.swift; sourceTree = "<group>"; };
+		1715024824C88487008AFA35 /* RoundsDataProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsDataProviderTest.swift; sourceTree = "<group>"; };
 		1715024A24C88487008AFA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1715025624C886BC008AFA35 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		1715025824C88E34008AFA35 /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		1715024724C88487008AFA35 /* FallingWords2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1715024824C88487008AFA35 /* FallingWords2Tests.swift */,
+				1715024824C88487008AFA35 /* RoundsDataProviderTest.swift */,
 				1715024A24C88487008AFA35 /* Info.plist */,
 			);
 			path = FallingWords2Tests;
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1715024924C88487008AFA35 /* FallingWords2Tests.swift in Sources */,
+				1715024924C88487008AFA35 /* RoundsDataProviderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
