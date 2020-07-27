@@ -19,6 +19,7 @@ struct AppState: Equatable {
 }
 
 typealias AppEffect = Effect<AppAction, Never>
+typealias AppStore = Store<AppState, AppAction>
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
     switch action {

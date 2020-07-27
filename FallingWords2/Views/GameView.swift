@@ -2,10 +2,10 @@ import SwiftUI
 import ComposableArchitecture
 
 struct GameView: View {
-    let store: Store<AppState, AppAction>
+    let store: AppStore
 
     var body: some View {
-        WithViewStore(self.store) { viewStore -> AnyView in
+        WithViewStore(store) { viewStore -> AnyView in
             switch viewStore.gameData {
             case .loading:
                 return AnyView(Text("Loading...").font(.title))
@@ -19,7 +19,7 @@ struct GameView: View {
 
     private func loadedBody(gameData: GameData) -> AnyView {
         AnyView(
-            WithViewStore(self.store) { viewStore in
+            WithViewStore(store) { viewStore in
                 VStack(spacing: 20) {
                     Text(gameData.rounds[viewStore.state.roundNumber].questionWord)
                     Text(gameData.rounds[viewStore.state.roundNumber].answerWord)
@@ -51,10 +51,4 @@ struct GameView: View {
         )
     }
 
-}
-
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView(store: Store(initialState: AppState(), reducer: appReducer, environment: .live))
-    }
 }
