@@ -9,6 +9,21 @@ enum AppAction: Equatable {
     case reloadGameData
 }
 
+enum GameDataState: Equatable {
+    case loading
+    case loaded(GameData)
+    case failure
+
+    var data: GameData? {
+        switch self {
+        case .loaded(let data):
+            return data
+        default:
+            return nil
+        }
+    }
+}
+
 struct AppState: Equatable {
     var gameData = GameDataState.loading
     var roundNumber = 0

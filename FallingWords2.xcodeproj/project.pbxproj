@@ -22,7 +22,6 @@
 		1752428E24C9E18600798865 /* ScoreHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1752428D24C9E18600798865 /* ScoreHistory.swift */; };
 		1752429024C9E34000798865 /* ScoreHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1752428F24C9E34000798865 /* ScoreHistoryView.swift */; };
 		177B86B524C99EE5001DBC5C /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B424C99EE5001DBC5C /* GameDataProvider.swift */; };
-		177B86B724C99F70001DBC5C /* TranslatedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B624C99F70001DBC5C /* TranslatedWord.swift */; };
 		17A4981024C9CCE40000B47E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4980F24C9CCE40000B47E /* Environment.swift */; };
 		17BD1BDE24CF0F950079B186 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 17BD1BDD24CF0F950079B186 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
@@ -57,7 +56,6 @@
 		1752428D24C9E18600798865 /* ScoreHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHistory.swift; sourceTree = "<group>"; };
 		1752428F24C9E34000798865 /* ScoreHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHistoryView.swift; sourceTree = "<group>"; };
 		177B86B424C99EE5001DBC5C /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
-		177B86B624C99F70001DBC5C /* TranslatedWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedWord.swift; sourceTree = "<group>"; };
 		17A4980F24C9CCE40000B47E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +137,6 @@
 				1715025624C886BC008AFA35 /* GameData.swift */,
 				1715025824C88E34008AFA35 /* GameResults.swift */,
 				1752428D24C9E18600798865 /* ScoreHistory.swift */,
-				177B86B624C99F70001DBC5C /* TranslatedWord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 				17A4981024C9CCE40000B47E /* Environment.swift in Sources */,
 				1715025E24C8A2B4008AFA35 /* TabBarView.swift in Sources */,
 				1715023424C88486008AFA35 /* SceneDelegate.swift in Sources */,
-				177B86B724C99F70001DBC5C /* TranslatedWord.swift in Sources */,
 				1715025B24C8907A008AFA35 /* AppState.swift in Sources */,
 				177B86B524C99EE5001DBC5C /* GameDataProvider.swift in Sources */,
 				1715023624C88486008AFA35 /* GameView.swift in Sources */,
