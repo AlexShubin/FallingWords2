@@ -1,20 +1,20 @@
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var appStore: AppStore
+    @ObservedObject var store: Store<AppState,AppAction>
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(appStore.state.currentRound.questionWord)
-            Text(appStore.state.currentRound.answerWord)
+            Text(store.value.currentRound.questionWord)
+            Text(store.value.currentRound.answerWord)
             HStack(spacing: 20) {
-                Button(action: { self.appStore.accept(.answer(isCorrect: true)) },
+                Button(action: { self.store.send(.answer(isCorrect: true)) },
                        label: { Text("YAY 🤗") })
-                Button(action: { self.appStore.accept(.answer(isCorrect: false)) },
+                Button(action: { self.store.send(.answer(isCorrect: false)) },
                        label: { Text("NAY 😡") })
             }
-            Text("Correct answer: \(appStore.state.gameResults.rightAnswers)")
-            Text("Wrong answers: \(appStore.state.gameResults.wrongAnswers)")
+            Text("Correct answer: \(store.value.gameResults.rightAnswers)")
+            Text("Wrong answers: \(store.value.gameResults.wrongAnswers)")
         }
         .font(.title)
     }
@@ -22,6 +22,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(appStore: AppStore(state: AppState(), reducer: appReducer))
+        GameView(store: Store(initialValue: AppState(), reducer: appReducer))
     }
 }

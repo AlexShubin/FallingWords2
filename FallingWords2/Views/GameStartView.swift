@@ -9,23 +9,23 @@
 import SwiftUI
 
 struct GameStartView: View {
-    @ObservedObject var appStore: AppStore
+    @ObservedObject var store: Store<AppState,AppAction>
 
     var body: some View {
         VStack(spacing: 10) {
             Button(action: {
-                self.appStore.accept(.gameStarted(true))
+                self.store.send(.gameStarted(true))
             }, label: { Text("Start game") })
                 .font(.largeTitle)
             results
         }
-        .sheet(isPresented: Binding.constant(appStore.state.gameStarted),
-               onDismiss: { self.appStore.accept(.gameStarted(false)) },
-               content: { GameView(appStore: self.appStore) })
+        .sheet(isPresented: Binding.constant(store.value.gameStarted),
+               onDismiss: { self.store.send(.gameStarted(false)) },
+               content: { GameView(store: self.store) })
     }
 
     private var results: AnyView {
-        if let gameResults = appStore.state.scoreHistory.activities.first?.results {
+        if let gameResults = store.value.scoreHistory.activities.first?.results {
             return AnyView(
                 VStack(spacing: 10) {
                     Text("Your latest result: ")
@@ -47,6 +47,6 @@ struct GameStartView_Previews: PreviewProvider {
             .init(timestamp: Date(),
                   results: .init(rightAnswers: 1, wrongAnswers: 1))
         ]
-        return GameStartView(appStore: AppStore(state: state, reducer: appReducer))
+        return GameStartView(store: Store(initialValue: state, reducer: appReducer))
     }
 }

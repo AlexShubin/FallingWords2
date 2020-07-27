@@ -1,14 +1,6 @@
-//
-//  AppState.swift
-//  FallingWords2
-//
-//  Created by ashubin on 22.07.20.
-//  Copyright © 2020 Alex Shubin. All rights reserved.
-//
-
 import Foundation
 
-enum AppEvent  {
+enum AppAction  {
     case answer(isCorrect: Bool)
     case removeActivities(indexSet: Set<Int>)
     case gameStarted(Bool)
@@ -27,8 +19,8 @@ struct AppState {
     }
 }
 
-func appReducer(state: inout AppState, event: AppEvent) {
-    switch event {
+func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>] {
+    switch action {
     case .answer(let isCorrect):
         if isCorrect == state.currentRound.isTranslationCorrect {
             state.gameResults.rightAnswers += 1
@@ -53,6 +45,7 @@ func appReducer(state: inout AppState, event: AppEvent) {
         }
         state.gameStarted = started
     }
+    return []
 }
 
 
