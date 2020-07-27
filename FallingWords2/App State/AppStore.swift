@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 public typealias Reducer<Value, Action> = (inout Value, Action) -> [Effect<Action>]
 
@@ -49,3 +50,25 @@ extension Publisher where Failure == Never {
     return Effect(publisher: self.eraseToAnyPublisher())
   }
 }
+
+var Current: Environment = .live
+
+struct Environment {
+    var gameDataProvider: GameDataProvider
+    var dateProvider:  () -> Date
+
+    static let live = Environment(
+        gameDataProvider: .default(),
+        dateProvider: Date.init
+    )
+}
+
+#if DEBUG
+extension Environment {
+    static let mock = Environment(
+        gameDataProvider: .mock,
+        dateProvider: { Date(timeIntervalSince1970: 0) }
+    )
+}
+#endif
+

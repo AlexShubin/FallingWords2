@@ -31,7 +31,10 @@ func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>]
         }
         if state.roundNumber == gameData.rounds.count - 1 {
             state.gameStarted = false
-            state.scoreHistory.activities.insert(.init(timestamp: Date(), results: state.gameResults), at: 0)
+            state.scoreHistory.activities.insert(
+                .init(timestamp: Current.dateProvider(), results: state.gameResults),
+                at: 0
+            )
         } else {
             state.roundNumber += 1
         }
@@ -58,7 +61,7 @@ func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>]
 }
 
 private var loadGameDataEffect: Effect<AppAction> {
-    GameDataProvider.default()
+    Current.gameDataProvider
         .provide(10)
         .map { AppAction.gameDataLoaded($0) }
         .receive(on: DispatchQueue.main)
