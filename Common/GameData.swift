@@ -19,7 +19,6 @@ public struct RoundData: Equatable {
         self.questionWord  = questionWord
         self.answerWord  = answerWord
         self.isTranslationCorrect = isTranslationCorrect
-
     }
 }
 

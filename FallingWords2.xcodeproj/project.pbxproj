@@ -13,7 +13,6 @@
 		1714E1E324CF413E00043308 /* GameModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1CD24CF413E00043308 /* GameModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1714E1EB24CF415200043308 /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715026124C8A709008AFA35 /* GameStartView.swift */; };
 		1714E1EC24CF415700043308 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023524C88486008AFA35 /* GameView.swift */; };
-		1714E1ED24CF415C00043308 /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B424C99EE5001DBC5C /* GameDataProvider.swift */; };
 		1714E1F124CF41E700043308 /* ModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714E1F024CF41E700043308 /* ModuleState.swift */; };
 		1714E1F324CF42DA00043308 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4980F24C9CCE40000B47E /* Environment.swift */; };
 		1714E20024CF436D00043308 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 1714E1FE24CF436D00043308 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +23,6 @@
 		1714E20A24CF43C900043308 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; };
 		1714E20B24CF43C900043308 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1714E20F24CF43FA00043308 /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025824C88E34008AFA35 /* GameResults.swift */; };
-		1714E21024CF45A700043308 /* GameDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715024824C88487008AFA35 /* GameDataProviderTests.swift */; };
 		1714E22524CF487F00043308 /* ScoreHistoryModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E21C24CF487F00043308 /* ScoreHistoryModule.framework */; };
 		1714E22C24CF487F00043308 /* ScoreHistoryModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714E22B24CF487F00043308 /* ScoreHistoryModuleTests.swift */; };
 		1714E22E24CF487F00043308 /* ScoreHistoryModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1714E21E24CF487F00043308 /* ScoreHistoryModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,7 +34,6 @@
 		1714E23F24CF498600043308 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1714E24A24CF4B5D00043308 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 1714E24924CF4B5D00043308 /* ComposableArchitecture */; };
 		1714E24C24CF4BA000043308 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714E24B24CF4BA000043308 /* Environment.swift */; };
-		1714E24F24CF534900043308 /* FallingWords2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714E24E24CF534900043308 /* FallingWords2Tests.swift */; };
 		1715023224C88486008AFA35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023124C88486008AFA35 /* AppDelegate.swift */; };
 		1715023424C88486008AFA35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715023324C88486008AFA35 /* SceneDelegate.swift */; };
 		1715023824C88487008AFA35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1715023724C88487008AFA35 /* Assets.xcassets */; };
@@ -44,6 +41,18 @@
 		1715023E24C88487008AFA35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1715023C24C88487008AFA35 /* LaunchScreen.storyboard */; };
 		1715025B24C8907A008AFA35 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025A24C8907A008AFA35 /* AppState.swift */; };
 		1715025E24C8A2B4008AFA35 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715025D24C8A2B4008AFA35 /* TabBarView.swift */; };
+		1736CFA824CF60E300F874B8 /* FallingWords2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736CFA724CF60E300F874B8 /* FallingWords2Tests.swift */; };
+		17C9B8B224CF569700F48071 /* GameModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714E24E24CF534900043308 /* GameModuleTests.swift */; };
+		17D100CE24CF546700ED4FA4 /* ServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; };
+		17D100D724CF546700ED4FA4 /* ServiceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D100C724CF546700ED4FA4 /* ServiceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17D100DA24CF546700ED4FA4 /* ServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; };
+		17D100DB24CF546700ED4FA4 /* ServiceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17D100E224CF547000ED4FA4 /* GameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B424C99EE5001DBC5C /* GameDataProvider.swift */; };
+		17D100E324CF548F00ED4FA4 /* GameDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715024824C88487008AFA35 /* GameDataProviderTests.swift */; };
+		17D100E424CF54DE00ED4FA4 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; };
+		17D100E524CF54DE00ED4FA4 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17D100E924CF55BC00ED4FA4 /* ServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; };
+		17D100EA24CF55BC00ED4FA4 /* ServiceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +119,34 @@
 			remoteGlobalIDString = 1715022D24C88486008AFA35;
 			remoteInfo = FallingWords2;
 		};
+		17D100CF24CF546700ED4FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715022624C88486008AFA35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D100C424CF546700ED4FA4;
+			remoteInfo = ServiceKit;
+		};
+		17D100D824CF546700ED4FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715022624C88486008AFA35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D100C424CF546700ED4FA4;
+			remoteInfo = ServiceKit;
+		};
+		17D100E624CF54DE00ED4FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715022624C88486008AFA35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1714E1FB24CF436D00043308;
+			remoteInfo = Common;
+		};
+		17D100EB24CF55BC00ED4FA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1715022624C88486008AFA35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D100C424CF546700ED4FA4;
+			remoteInfo = ServiceKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,6 +159,7 @@
 				1714E1E324CF413E00043308 /* GameModule.framework in Embed Frameworks */,
 				1714E23224CF487F00043308 /* ScoreHistoryModule.framework in Embed Frameworks */,
 				1714E20424CF436D00043308 /* Common.framework in Embed Frameworks */,
+				17D100DB24CF546700ED4FA4 /* ServiceKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +171,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1714E20B24CF43C900043308 /* Common.framework in Embed Frameworks */,
+				17D100EA24CF55BC00ED4FA4 /* ServiceKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +183,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1714E23F24CF498600043308 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100E824CF54DE00ED4FA4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17D100E524CF54DE00ED4FA4 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +218,7 @@
 		1714E22D24CF487F00043308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1714E23A24CF48B900043308 /* ModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleState.swift; sourceTree = "<group>"; };
 		1714E24B24CF4BA000043308 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		1714E24E24CF534900043308 /* FallingWords2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWords2Tests.swift; sourceTree = "<group>"; };
+		1714E24E24CF534900043308 /* GameModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModuleTests.swift; sourceTree = "<group>"; };
 		1715022E24C88486008AFA35 /* FallingWords2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWords2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1715023124C88486008AFA35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1715023324C88486008AFA35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,10 +235,16 @@
 		1715025A24C8907A008AFA35 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1715025D24C8A2B4008AFA35 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1715026124C8A709008AFA35 /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		1736CFA724CF60E300F874B8 /* FallingWords2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingWords2Tests.swift; sourceTree = "<group>"; };
 		1752428D24C9E18600798865 /* ScoreHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHistory.swift; sourceTree = "<group>"; };
 		1752428F24C9E34000798865 /* ScoreHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHistoryView.swift; sourceTree = "<group>"; };
 		177B86B424C99EE5001DBC5C /* GameDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataProvider.swift; sourceTree = "<group>"; };
 		17A4980F24C9CCE40000B47E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		17D100C524CF546700ED4FA4 /* ServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D100C724CF546700ED4FA4 /* ServiceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceKit.h; sourceTree = "<group>"; };
+		17D100C824CF546700ED4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D100CD24CF546700ED4FA4 /* ServiceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServiceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D100D624CF546700ED4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1714E20A24CF43C900043308 /* Common.framework in Frameworks */,
+				17D100E924CF55BC00ED4FA4 /* ServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +296,7 @@
 				1714E20324CF436D00043308 /* Common.framework in Frameworks */,
 				1714E23124CF487F00043308 /* ScoreHistoryModule.framework in Frameworks */,
 				1714E1E224CF413E00043308 /* GameModule.framework in Frameworks */,
+				17D100DA24CF546700ED4FA4 /* ServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +304,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100C224CF546700ED4FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D100E424CF54DE00ED4FA4 /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100CA24CF546700ED4FA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D100CE24CF546700ED4FA4 /* ServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +333,6 @@
 				1715026124C8A709008AFA35 /* GameStartView.swift */,
 				17A4980F24C9CCE40000B47E /* Environment.swift */,
 				1715023524C88486008AFA35 /* GameView.swift */,
-				177B86B424C99EE5001DBC5C /* GameDataProvider.swift */,
 				1714E1F024CF41E700043308 /* ModuleState.swift */,
 				1714E1D024CF413E00043308 /* Info.plist */,
 			);
@@ -269,8 +342,8 @@
 		1714E1DB24CF413E00043308 /* GameModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				1715024824C88487008AFA35 /* GameDataProviderTests.swift */,
 				1714E1DE24CF413E00043308 /* Info.plist */,
+				1714E24E24CF534900043308 /* GameModuleTests.swift */,
 			);
 			path = GameModuleTests;
 			sourceTree = "<group>";
@@ -324,6 +397,8 @@
 				1714E1FD24CF436D00043308 /* Common */,
 				1714E21D24CF487F00043308 /* ScoreHistoryModule */,
 				1714E22A24CF487F00043308 /* ScoreHistoryModuleTests */,
+				17D100C624CF546700ED4FA4 /* ServiceKit */,
+				17D100D324CF546700ED4FA4 /* ServiceKitTests */,
 				1715022F24C88486008AFA35 /* Products */,
 				1714E1F424CF431B00043308 /* Frameworks */,
 			);
@@ -339,6 +414,8 @@
 				1714E1FC24CF436D00043308 /* Common.framework */,
 				1714E21C24CF487F00043308 /* ScoreHistoryModule.framework */,
 				1714E22424CF487F00043308 /* ScoreHistoryModuleTests.xctest */,
+				17D100C524CF546700ED4FA4 /* ServiceKit.framework */,
+				17D100CD24CF546700ED4FA4 /* ServiceKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,9 +448,28 @@
 			isa = PBXGroup;
 			children = (
 				1715024A24C88487008AFA35 /* Info.plist */,
-				1714E24E24CF534900043308 /* FallingWords2Tests.swift */,
+				1736CFA724CF60E300F874B8 /* FallingWords2Tests.swift */,
 			);
 			path = FallingWords2Tests;
+			sourceTree = "<group>";
+		};
+		17D100C624CF546700ED4FA4 /* ServiceKit */ = {
+			isa = PBXGroup;
+			children = (
+				17D100C724CF546700ED4FA4 /* ServiceKit.h */,
+				177B86B424C99EE5001DBC5C /* GameDataProvider.swift */,
+				17D100C824CF546700ED4FA4 /* Info.plist */,
+			);
+			path = ServiceKit;
+			sourceTree = "<group>";
+		};
+		17D100D324CF546700ED4FA4 /* ServiceKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				1715024824C88487008AFA35 /* GameDataProviderTests.swift */,
+				17D100D624CF546700ED4FA4 /* Info.plist */,
+			);
+			path = ServiceKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +499,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17D100C024CF546700ED4FA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D100D724CF546700ED4FA4 /* ServiceKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -420,6 +524,7 @@
 			);
 			dependencies = (
 				1714E20D24CF43C900043308 /* PBXTargetDependency */,
+				17D100EC24CF55BC00ED4FA4 /* PBXTargetDependency */,
 			);
 			name = GameModule;
 			packageProductDependencies = (
@@ -523,6 +628,7 @@
 				1714E1E124CF413E00043308 /* PBXTargetDependency */,
 				1714E20224CF436D00043308 /* PBXTargetDependency */,
 				1714E23024CF487F00043308 /* PBXTargetDependency */,
+				17D100D924CF546700ED4FA4 /* PBXTargetDependency */,
 			);
 			name = FallingWords2;
 			packageProductDependencies = (
@@ -547,6 +653,44 @@
 			name = FallingWords2Tests;
 			productName = FallingWords2Tests;
 			productReference = 1715024424C88487008AFA35 /* FallingWords2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17D100C424CF546700ED4FA4 /* ServiceKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D100E024CF546700ED4FA4 /* Build configuration list for PBXNativeTarget "ServiceKit" */;
+			buildPhases = (
+				17D100C024CF546700ED4FA4 /* Headers */,
+				17D100C124CF546700ED4FA4 /* Sources */,
+				17D100C224CF546700ED4FA4 /* Frameworks */,
+				17D100C324CF546700ED4FA4 /* Resources */,
+				17D100E824CF54DE00ED4FA4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D100E724CF54DE00ED4FA4 /* PBXTargetDependency */,
+			);
+			name = ServiceKit;
+			productName = ServiceKit;
+			productReference = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		17D100CC24CF546700ED4FA4 /* ServiceKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D100E124CF546700ED4FA4 /* Build configuration list for PBXNativeTarget "ServiceKitTests" */;
+			buildPhases = (
+				17D100C924CF546700ED4FA4 /* Sources */,
+				17D100CA24CF546700ED4FA4 /* Frameworks */,
+				17D100CB24CF546700ED4FA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D100D024CF546700ED4FA4 /* PBXTargetDependency */,
+			);
+			name = ServiceKitTests;
+			productName = ServiceKitTests;
+			productReference = 17D100CD24CF546700ED4FA4 /* ServiceKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -582,6 +726,12 @@
 						LastSwiftMigration = 1160;
 						TestTargetID = 1715022D24C88486008AFA35;
 					};
+					17D100C424CF546700ED4FA4 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					17D100CC24CF546700ED4FA4 = {
+						CreatedOnToolsVersion = 11.6;
+					};
 				};
 			};
 			buildConfigurationList = 1715022924C88486008AFA35 /* Build configuration list for PBXProject "FallingWords2" */;
@@ -607,6 +757,8 @@
 				1714E1FB24CF436D00043308 /* Common */,
 				1714E21B24CF487F00043308 /* ScoreHistoryModule */,
 				1714E22324CF487F00043308 /* ScoreHistoryModuleTests */,
+				17D100C424CF546700ED4FA4 /* ServiceKit */,
+				17D100CC24CF546700ED4FA4 /* ServiceKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -664,6 +816,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17D100C324CF546700ED4FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100CB24CF546700ED4FA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -674,7 +840,6 @@
 				1714E1EC24CF415700043308 /* GameView.swift in Sources */,
 				1714E1F324CF42DA00043308 /* Environment.swift in Sources */,
 				1714E1EB24CF415200043308 /* GameStartView.swift in Sources */,
-				1714E1ED24CF415C00043308 /* GameDataProvider.swift in Sources */,
 				1714E1F124CF41E700043308 /* ModuleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,7 +848,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1714E21024CF45A700043308 /* GameDataProviderTests.swift in Sources */,
+				17C9B8B224CF569700F48071 /* GameModuleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +895,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1714E24F24CF534900043308 /* FallingWords2Tests.swift in Sources */,
+				1736CFA824CF60E300F874B8 /* FallingWords2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100C124CF546700ED4FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D100E224CF547000ED4FA4 /* GameDataProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D100C924CF546700ED4FA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D100E324CF548F00ED4FA4 /* GameDataProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,6 +962,26 @@
 			isa = PBXTargetDependency;
 			target = 1715022D24C88486008AFA35 /* FallingWords2 */;
 			targetProxy = 1715024524C88487008AFA35 /* PBXContainerItemProxy */;
+		};
+		17D100D024CF546700ED4FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D100C424CF546700ED4FA4 /* ServiceKit */;
+			targetProxy = 17D100CF24CF546700ED4FA4 /* PBXContainerItemProxy */;
+		};
+		17D100D924CF546700ED4FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D100C424CF546700ED4FA4 /* ServiceKit */;
+			targetProxy = 17D100D824CF546700ED4FA4 /* PBXContainerItemProxy */;
+		};
+		17D100E724CF54DE00ED4FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1714E1FB24CF436D00043308 /* Common */;
+			targetProxy = 17D100E624CF54DE00ED4FA4 /* PBXContainerItemProxy */;
+		};
+		17D100EC24CF55BC00ED4FA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D100C424CF546700ED4FA4 /* ServiceKit */;
+			targetProxy = 17D100EB24CF55BC00ED4FA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1223,6 +1424,94 @@
 			};
 			name = Release;
 		};
+		17D100DC24CF546700ED4FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ServiceKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.ServiceKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		17D100DD24CF546700ED4FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ServiceKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.ServiceKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		17D100DE24CF546700ED4FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ServiceKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.ServiceKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17D100DF24CF546700ED4FA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ServiceKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.ServiceKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1294,6 +1583,24 @@
 			buildConfigurations = (
 				1715025124C88487008AFA35 /* Debug */,
 				1715025224C88487008AFA35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D100E024CF546700ED4FA4 /* Build configuration list for PBXNativeTarget "ServiceKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D100DC24CF546700ED4FA4 /* Debug */,
+				17D100DD24CF546700ED4FA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D100E124CF546700ED4FA4 /* Build configuration list for PBXNativeTarget "ServiceKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D100DE24CF546700ED4FA4 /* Debug */,
+				17D100DF24CF546700ED4FA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

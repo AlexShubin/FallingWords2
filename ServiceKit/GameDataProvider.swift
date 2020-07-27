@@ -2,10 +2,10 @@ import Foundation
 import Combine
 import Common
 
-struct GameDataProvider {
-    let provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
+public struct GameDataProvider {
+    public let provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
 
-    static func live(
+    static func make(
         translatedWordsLoader: TranslatedWordsLoader = .live,
         wordsShuffler: @escaping ([TranslatedWord]) -> [TranslatedWord] = { $0.shuffled() },
         roundsShuffler: @escaping ([RoundData]) -> [RoundData] = { $0.shuffled() }
@@ -44,8 +44,10 @@ struct GameDataProvider {
         }
     }
 
+    public static let live = GameDataProvider.make()
+
     #if DEBUG
-    static let mock = GameDataProvider { _ in
+    public static let mock = GameDataProvider { _ in
         Just(GameData(rounds: [
             .init(questionWord: "1", answerWord: "1t", isTranslationCorrect: true),
             .init(questionWord: "2", answerWord: "2t", isTranslationCorrect: true)

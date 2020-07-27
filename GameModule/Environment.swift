@@ -1,11 +1,12 @@
 import Foundation
+import ServiceKit
 
 public struct ModuleEnvironment {
     var gameDataProvider: GameDataProvider
     var dateProvider:  () -> Date
 
     public static let live = ModuleEnvironment(
-        gameDataProvider: .live(),
+        gameDataProvider: .live,
         dateProvider: Date.init
     )
 }
