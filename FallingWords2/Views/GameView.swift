@@ -6,7 +6,7 @@ struct GameView: View {
     var body: some View {
         switch store.value.gameData {
         case .loading:
-            return AnyView(Text("Loading..."))
+            return AnyView(Text("Loading...").font(.title))
         case .loaded(let gameData):
             return loadedBody(gameData: gameData)
         case .failure:
@@ -34,10 +34,12 @@ struct GameView: View {
 
     private var failedBody: AnyView {
         AnyView(
-            VStack {
-                Text("Error!")
+            VStack(spacing: 20) {
+                Text("Oops! Something went wrong!")
+                    .font(.subheadline)
                 Button(action: { self.store.send(.reloadGameData) },
                        label: { Text("Try again") })
+                    .font(.title)
             }
         )
     }

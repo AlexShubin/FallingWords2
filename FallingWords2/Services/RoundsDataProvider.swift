@@ -43,10 +43,18 @@ struct GameDataProvider {
 struct TranslatedWordsLoader {
     let load: () -> AnyPublisher<[TranslatedWord], Error>
 
+    private static let urlSession: URLSession  = {
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+
+        return URLSession(configuration: config)
+    }()
+
     static let `default` = Self {
         let url = URL(string: "https://raw.githubusercontent.com/AlexShubin/FallingWords2/master/words.json")!
         
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return urlSession.dataTaskPublisher(for: url)
             .map { data, _ in data }
             .decode(type: [TranslatedWord].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
