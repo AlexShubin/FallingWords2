@@ -3,7 +3,7 @@ import XCTest
 import Combine
 
 class RoundsDataProviderTests: XCTestCase {
-    let sut = GameDataProvider.default(
+    let sut = GameDataProvider.live(
         translatedWordsLoader: .mock,
         wordsShuffler: { $0 },
         roundsShuffler: { $0 }

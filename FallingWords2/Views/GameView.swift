@@ -53,8 +53,8 @@ struct GameView: View {
 
 }
 
-//struct GameView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameView(store: Store(initialValue: AppState(), reducer: appReducer))
-//    }
-//}
+struct GameView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameView(store: Store(initialState: AppState(), reducer: appReducer, environment: .live))
+    }
+}

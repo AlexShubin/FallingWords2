@@ -35,17 +35,17 @@ struct ScoreHistoryView: View {
     }
 }
 
-//struct ScoreHistoryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        var state = AppState()
-//        state.scoreHistory.activities = [
-//            .init(timestamp: Date(),
-//                  results: .init(rightAnswers: 1, wrongAnswers: 1)),
-//            .init(timestamp: Date(timeIntervalSinceNow: 10),
-//            results: .init(rightAnswers: 5, wrongAnswers: 1)),
-//            .init(timestamp: Date(timeIntervalSinceNow: 20),
-//            results: .init(rightAnswers: 1, wrongAnswers: 5))
-//        ]
-//        return ScoreHistoryView(store: Store(initialValue: state, reducer: appReducer))
-//    }
-//}
+struct ScoreHistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        var state = AppState()
+        state.scoreHistory.activities = [
+            .init(timestamp: Date(),
+                  results: .init(rightAnswers: 1, wrongAnswers: 1)),
+            .init(timestamp: Date(timeIntervalSinceNow: 10),
+            results: .init(rightAnswers: 5, wrongAnswers: 1)),
+            .init(timestamp: Date(timeIntervalSinceNow: 20),
+            results: .init(rightAnswers: 1, wrongAnswers: 5))
+        ]
+        return ScoreHistoryView(store: Store(initialState: state, reducer: appReducer, environment: .live))
+    }
+}

@@ -35,13 +35,13 @@ struct GameStartView: View {
     }
 }
 
-//struct GameStartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        var state = AppState()
-//        state.scoreHistory.activities = [
-//            .init(timestamp: Date(),
-//                  results: .init(rightAnswers: 1, wrongAnswers: 1))
-//        ]
-//        return GameStartView(store: Store(initialValue: state, reducer: appReducer))
-//    }
-//}
+struct GameStartView_Previews: PreviewProvider {
+    static var previews: some View {
+        var state = AppState()
+        state.scoreHistory.activities = [
+            .init(timestamp: Date(),
+                  results: .init(rightAnswers: 1, wrongAnswers: 1))
+        ]
+        return GameStartView(store: Store(initialState: state, reducer: appReducer, environment: .live))
+    }
+}
