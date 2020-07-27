@@ -4,8 +4,8 @@ import Combine
 struct GameDataProvider {
     let provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
 
-    static func `default`(
-        translatedWordsLoader: TranslatedWordsLoader = .default,
+    static func live(
+        translatedWordsLoader: TranslatedWordsLoader = .live,
         wordsShuffler: @escaping ([TranslatedWord]) -> [TranslatedWord] = { $0.shuffled() },
         roundsShuffler: @escaping ([RoundData]) -> [RoundData] = { $0.shuffled() }
     ) -> GameDataProvider {
@@ -64,7 +64,7 @@ struct TranslatedWordsLoader {
         return URLSession(configuration: config)
     }()
 
-    static let `default` = Self {
+    static let live = Self {
         let url = URL(string: "https://raw.githubusercontent.com/AlexShubin/FallingWords2/master/words.json")!
         
         return urlSession.dataTaskPublisher(for: url)

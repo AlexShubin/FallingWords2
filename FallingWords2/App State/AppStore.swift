@@ -58,7 +58,7 @@ struct Environment {
     var dateProvider:  () -> Date
 
     static let live = Environment(
-        gameDataProvider: .default(),
+        gameDataProvider: .live(),
         dateProvider: Date.init
     )
 }
