@@ -11,7 +11,7 @@ struct GameStartView: View {
                     viewStore.send(.gameStarted(true))
                 }, label: { Text("Start game") })
                     .font(.largeTitle)
-                self.results(with: viewStore)
+                self.results
             }
             .sheet(isPresented: Binding.constant(viewStore.gameStarted),
                    onDismiss: { viewStore.send(.gameStarted(false)) },
@@ -19,19 +19,21 @@ struct GameStartView: View {
         }
     }
 
-    private func results(with viewStore: ViewStore<AppState, AppAction>) -> AnyView {
-        if let gameResults = viewStore.scoreHistory.activities.first?.results {
-            return AnyView(
-                VStack(spacing: 10) {
-                    Text("Your latest result: ")
-                        .font(.title)
-                    Text("Correct answer: \(gameResults.rightAnswers)")
-                    Text("Wrong answers: \(gameResults.wrongAnswers)")
-                }
-                .font(.headline)
-            )
-        }
-        return AnyView(EmptyView())
+    private var results: AnyView {
+        AnyView(WithViewStore(store) { viewStore -> AnyView in
+            if let gameResults = viewStore.scoreHistory.activities.first?.results {
+                return AnyView(
+                    VStack(spacing: 10) {
+                        Text("Your latest result: ")
+                            .font(.title)
+                        Text("Correct answer: \(gameResults.rightAnswers)")
+                        Text("Wrong answers: \(gameResults.wrongAnswers)")
+                    }
+                    .font(.headline)
+                )
+            }
+            return AnyView(EmptyView())
+        })
     }
 }
 
