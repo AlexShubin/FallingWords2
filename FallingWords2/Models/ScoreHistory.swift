@@ -1,9 +1,9 @@
 import Foundation
 
-struct ScoreHistory {
+struct ScoreHistory: Equatable {
     var activities: [Activity]
 
-    struct Activity: Identifiable {
+    struct Activity: Identifiable, Equatable {
         let timestamp: Date
         let results: GameResults
 

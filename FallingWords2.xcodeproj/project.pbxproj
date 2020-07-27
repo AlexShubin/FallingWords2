@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,8 @@
 		1752429024C9E34000798865 /* ScoreHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1752428F24C9E34000798865 /* ScoreHistoryView.swift */; };
 		177B86B524C99EE5001DBC5C /* RoundsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B424C99EE5001DBC5C /* RoundsDataProvider.swift */; };
 		177B86B724C99F70001DBC5C /* TranslatedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177B86B624C99F70001DBC5C /* TranslatedWord.swift */; };
-		17A4981024C9CCE40000B47E /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4980F24C9CCE40000B47E /* AppStore.swift */; };
+		17A4981024C9CCE40000B47E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4980F24C9CCE40000B47E /* Environment.swift */; };
+		17BD1BDE24CF0F950079B186 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 17BD1BDD24CF0F950079B186 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		1752428F24C9E34000798865 /* ScoreHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHistoryView.swift; sourceTree = "<group>"; };
 		177B86B424C99EE5001DBC5C /* RoundsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsDataProvider.swift; sourceTree = "<group>"; };
 		177B86B624C99F70001DBC5C /* TranslatedWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedWord.swift; sourceTree = "<group>"; };
-		17A4980F24C9CCE40000B47E /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		17A4980F24C9CCE40000B47E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BD1BDE24CF0F950079B186 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +101,13 @@
 		1715023024C88486008AFA35 /* FallingWords2 */ = {
 			isa = PBXGroup;
 			children = (
-				17A4980E24C9CCD50000B47E /* App State */,
 				177B86B324C99ED1001DBC5C /* Services */,
 				1715025C24C8A294008AFA35 /* Views */,
 				1715025324C884FD008AFA35 /* Models */,
 				1715023124C88486008AFA35 /* AppDelegate.swift */,
 				1715023324C88486008AFA35 /* SceneDelegate.swift */,
+				1715025A24C8907A008AFA35 /* AppState.swift */,
+				17A4980F24C9CCE40000B47E /* Environment.swift */,
 				1715023724C88487008AFA35 /* Assets.xcassets */,
 				1715023C24C88487008AFA35 /* LaunchScreen.storyboard */,
 				1715023F24C88487008AFA35 /* Info.plist */,
@@ -160,15 +163,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		17A4980E24C9CCD50000B47E /* App State */ = {
-			isa = PBXGroup;
-			children = (
-				1715025A24C8907A008AFA35 /* AppState.swift */,
-				17A4980F24C9CCE40000B47E /* AppStore.swift */,
-			);
-			path = "App State";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +179,9 @@
 			dependencies = (
 			);
 			name = FallingWords2;
+			packageProductDependencies = (
+				17BD1BDD24CF0F950079B186 /* ComposableArchitecture */,
+			);
 			productName = FallingWords2;
 			productReference = 1715022E24C88486008AFA35 /* FallingWords2.app */;
 			productType = "com.apple.product-type.application";
@@ -235,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 1715022524C88486008AFA35;
+			packageReferences = (
+				17BD1BDC24CF0F950079B186 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 1715022F24C88486008AFA35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,7 +274,7 @@
 				1715025724C886BC008AFA35 /* GameData.swift in Sources */,
 				1752429024C9E34000798865 /* ScoreHistoryView.swift in Sources */,
 				1715026224C8A709008AFA35 /* GameStartView.swift in Sources */,
-				17A4981024C9CCE40000B47E /* AppStore.swift in Sources */,
+				17A4981024C9CCE40000B47E /* Environment.swift in Sources */,
 				1715025E24C8A2B4008AFA35 /* TabBarView.swift in Sources */,
 				1715023424C88486008AFA35 /* SceneDelegate.swift in Sources */,
 				177B86B724C99F70001DBC5C /* TranslatedWord.swift in Sources */,
@@ -541,6 +541,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17BD1BDC24CF0F950079B186 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17BD1BDD24CF0F950079B186 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17BD1BDC24CF0F950079B186 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1715022624C88486008AFA35 /* Project object */;
 }

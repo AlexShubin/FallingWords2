@@ -1,4 +1,5 @@
 import SwiftUI
+import ComposableArchitecture
 
 struct TabBarView: View {
     let store: Store<AppState, AppAction>
@@ -22,9 +23,9 @@ private extension Image {
     static let list = Image(systemName: "list.dash")
 }
 
-struct TabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView(store: Store(initialValue: AppState(),
-                                reducer: appReducer))
-    }
-}
+//struct TabBarView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabBarView(store: Store(initialValue: AppState(),
+//                                reducer: appReducer))
+//    }
+//}

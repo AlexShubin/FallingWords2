@@ -1,6 +1,7 @@
 import Foundation
+import ComposableArchitecture
 
-enum AppAction  {
+enum AppAction: Equatable {
     case answer(isCorrect: Bool)
     case removeActivities(indexSet: Set<Int>)
     case gameStarted(Bool)
@@ -8,7 +9,7 @@ enum AppAction  {
     case reloadGameData
 }
 
-struct AppState {
+struct AppState: Equatable {
     var gameData = GameDataState.loading
     var roundNumber = 0
     var gameResults = GameResults.empty
@@ -17,11 +18,13 @@ struct AppState {
     var scoreHistory = ScoreHistory.empty
 }
 
-func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>] {
+typealias AppEffect = Effect<AppAction, Never>
+
+let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
     switch action {
     case .answer(let isCorrect):
         guard let gameData = state.gameData.data else {
-            return []
+            return .none
         }
         let currentRound = gameData.rounds[state.roundNumber]
         if isCorrect == currentRound.isTranslationCorrect {
@@ -32,7 +35,7 @@ func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>]
         if state.roundNumber == gameData.rounds.count - 1 {
             state.gameStarted = false
             state.scoreHistory.activities.insert(
-                .init(timestamp: Current.dateProvider(), results: state.gameResults),
+                .init(timestamp: environment.dateProvider(), results: state.gameResults),
                 at: 0
             )
         } else {
@@ -50,18 +53,18 @@ func appReducer(state: inout AppState, action: AppAction) -> [Effect<AppAction>]
             state.gameData = .loading
         }
         state.gameStarted = started
-        return [loadGameDataEffect]
+        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
     case .gameDataLoaded(let data):
         state.gameData = data.map { .loaded($0) } ?? .failure
     case .reloadGameData:
         state.gameData = .loading
-        return [loadGameDataEffect]
+        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
     }
-    return []
+    return .none
 }
 
-private var loadGameDataEffect: Effect<AppAction> {
-    Current.gameDataProvider
+private func loadGameDataEffect(dataProvider: GameDataProvider) -> AppEffect {
+    dataProvider
         .provide(10)
         .map { AppAction.gameDataLoaded($0) }
         .receive(on: DispatchQueue.main)
