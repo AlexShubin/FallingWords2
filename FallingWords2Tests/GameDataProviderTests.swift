@@ -2,7 +2,7 @@ import XCTest
 @testable import FallingWords2
 import Combine
 
-class RoundsDataProviderTests: XCTestCase {
+class GameDataProviderTests: XCTestCase {
     let sut = GameDataProvider.live(
         translatedWordsLoader: .mock,
         wordsShuffler: { $0 },
