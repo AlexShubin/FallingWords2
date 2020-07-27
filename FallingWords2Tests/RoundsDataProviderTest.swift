@@ -3,7 +3,7 @@ import XCTest
 import Combine
 
 class RoundsDataProviderTests: XCTestCase {
-    let sut = RoundsDataProvider.default(
+    let sut = GameDataProvider.default(
         translatedWordsLoader: .mock,
         wordsShuffler: { $0 },
         roundsShuffler: { $0 }
@@ -12,13 +12,17 @@ class RoundsDataProviderTests: XCTestCase {
     var cancellable: Cancellable?
 
     func testProviderHappyPath() {
-        var result: [RoundData] = []
+        var result: GameData?
         cancellable = sut.provide(2)
             .sink(receiveCompletion: { _ in }) {
                 result = $0
         }
-        XCTAssertEqual(result, [.init(questionWord: "1", answerWord: "1t", isTranslationCorrect: true),
-                                .init(questionWord: "2", answerWord: "4t", isTranslationCorrect: false)])
+        XCTAssertEqual(result, GameData(
+            rounds: [
+                .init(questionWord: "1", answerWord: "1t", isTranslationCorrect: true),
+                .init(questionWord: "2", answerWord: "4t", isTranslationCorrect: false)
+            ]
+        ))
     }
 }
 

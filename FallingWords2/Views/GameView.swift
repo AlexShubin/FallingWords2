@@ -4,19 +4,42 @@ struct GameView: View {
     @ObservedObject var store: Store<AppState,AppAction>
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text(store.value.currentRound.questionWord)
-            Text(store.value.currentRound.answerWord)
-            HStack(spacing: 20) {
-                Button(action: { self.store.send(.answer(isCorrect: true)) },
-                       label: { Text("YAY 🤗") })
-                Button(action: { self.store.send(.answer(isCorrect: false)) },
-                       label: { Text("NAY 😡") })
-            }
-            Text("Correct answer: \(store.value.gameResults.rightAnswers)")
-            Text("Wrong answers: \(store.value.gameResults.wrongAnswers)")
+        switch store.value.gameData {
+        case .loading:
+            return AnyView(Text("Loading..."))
+        case .loaded(let gameData):
+            return loadedBody(gameData: gameData)
+        case .failure:
+            return failedBody
         }
-        .font(.title)
+    }
+
+    private func loadedBody(gameData: GameData) -> AnyView {
+        AnyView(
+            VStack(spacing: 20) {
+                Text(gameData.rounds[store.value.roundNumber].questionWord)
+                Text(gameData.rounds[store.value.roundNumber].answerWord)
+                HStack(spacing: 20) {
+                    Button(action: { self.store.send(.answer(isCorrect: true)) },
+                           label: { Text("YAY 🤗") })
+                    Button(action: { self.store.send(.answer(isCorrect: false)) },
+                           label: { Text("NAY 😡") })
+                }
+                Text("Correct answer: \(store.value.gameResults.rightAnswers)")
+                Text("Wrong answers: \(store.value.gameResults.wrongAnswers)")
+            }
+            .font(.title)
+        )
+    }
+
+    private var failedBody: AnyView {
+        AnyView(
+            VStack {
+                Text("Error!")
+                Button(action: { self.store.send(.reloadGameData) },
+                       label: { Text("Try again") })
+            }
+        )
     }
 }
 

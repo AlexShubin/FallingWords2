@@ -1,11 +1,3 @@
-//
-//  AppStore.swift
-//  FallingWords2
-//
-//  Created by ashubin on 23.07.20.
-//  Copyright © 2020 Alex Shubin. All rights reserved.
-//
-
 import Combine
 
 public typealias Reducer<Value, Action> = (inout Value, Action) -> [Effect<Action>]
@@ -50,4 +42,10 @@ public struct Effect<Output>: Publisher {
     ) where S: Subscriber, Failure == S.Failure, Output == S.Input {
         self.publisher.receive(subscriber: subscriber)
     }
+}
+
+extension Publisher where Failure == Never {
+  public func eraseToEffect() -> Effect<Output> {
+    return Effect(publisher: self.eraseToAnyPublisher())
+  }
 }
