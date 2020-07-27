@@ -1,16 +1,26 @@
 import SwiftUI
 import ComposableArchitecture
+import ScoreHistoryModule
+import GameModule
 
 struct TabBarView: View {
-    let store: Store<AppState, AppAction>
+    let store: AppStore
 
     var body: some View {
-        TabView{
-            GameStartView(store: store).tabItem {
+        TabView {
+            GameStartView(store: store.scope(
+                state: { $0.gameModule },
+                action: { .gameModule($0) }
+            ))
+                .tabItem {
                     Image.game
                     Text("Game")
             }
-            ScoreHistoryView(store: store).tabItem {
+            ScoreHistoryView(store: store.scope(
+                state: { $0.scoreHistoryModule },
+                action: { .scoreHistoryModule($0) }
+            ))
+                .tabItem {
                     Image.list
                     Text("Score")
             }

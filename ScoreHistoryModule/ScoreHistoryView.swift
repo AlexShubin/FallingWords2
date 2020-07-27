@@ -1,8 +1,12 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ScoreHistoryView: View {
-    let store: Store<AppState,AppAction>
+public struct ScoreHistoryView: View {
+    let store: ModuleStore
+
+    public init(store: ModuleStore) {
+        self.store = store
+    }
 
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -11,7 +15,7 @@ struct ScoreHistoryView: View {
         return formatter
     }()
 
-    var body: some View {
+    public var body: some View {
         WithViewStore(self.store) { viewStore in
             NavigationView {
                 List {
@@ -37,7 +41,7 @@ struct ScoreHistoryView: View {
 
 struct ScoreHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        var state = AppState()
+        var state = ModuleState()
         state.scoreHistory.activities = [
             .init(timestamp: Date(),
                   results: .init(rightAnswers: 1, wrongAnswers: 1)),
@@ -46,6 +50,6 @@ struct ScoreHistoryView_Previews: PreviewProvider {
             .init(timestamp: Date(timeIntervalSinceNow: 20),
             results: .init(rightAnswers: 1, wrongAnswers: 5))
         ]
-        return ScoreHistoryView(store: Store(initialState: state, reducer: appReducer, environment: .live))
+        return ScoreHistoryView(store: Store(initialState: state, reducer: reducer, environment: ()))
     }
 }

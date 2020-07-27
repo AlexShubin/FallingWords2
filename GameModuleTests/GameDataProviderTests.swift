@@ -1,6 +1,7 @@
 import XCTest
-@testable import FallingWords2
+@testable import GameModule
 import Combine
+import Common
 
 class GameDataProviderTests: XCTestCase {
     let sut = GameDataProvider.live(

@@ -1,8 +1,9 @@
 import SwiftUI
 import ComposableArchitecture
+import Common
 
 struct GameView: View {
-    let store: AppStore
+    let store: ModuleStore
 
     var body: some View {
         WithViewStore(store) { viewStore -> AnyView in

@@ -1,20 +1,18 @@
 import Foundation
+import GameModule
 
 struct AppEnvironment {
-    var gameDataProvider: GameDataProvider
-    var dateProvider:  () -> Date
+    var gameModuleEnvironment: GameModule.ModuleEnvironment
 
     static let live = AppEnvironment(
-        gameDataProvider: .live(),
-        dateProvider: Date.init
+        gameModuleEnvironment: .live
     )
 }
 
 #if DEBUG
 extension AppEnvironment {
     static let mock = AppEnvironment(
-        gameDataProvider: .mock,
-        dateProvider: { Date(timeIntervalSince1970: 0) }
+        gameModuleEnvironment: .mock
     )
 }
 #endif

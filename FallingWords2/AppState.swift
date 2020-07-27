@@ -1,27 +1,12 @@
 import Foundation
 import ComposableArchitecture
+import GameModule
+import ScoreHistoryModule
+import Common
 
 enum AppAction: Equatable {
-    case answer(isCorrect: Bool)
-    case removeActivities(indexSet: Set<Int>)
-    case gameStarted(Bool)
-    case gameDataLoaded(GameData?)
-    case reloadGameData
-}
-
-enum GameDataState: Equatable {
-    case loading
-    case loaded(GameData)
-    case failure
-
-    var data: GameData? {
-        switch self {
-        case .loaded(let data):
-            return data
-        default:
-            return nil
-        }
-    }
+    case scoreHistoryModule(ScoreHistoryModule.ModuleAction)
+    case gameModule(GameModule.ModuleAction)
 }
 
 struct AppState: Equatable {
@@ -29,62 +14,49 @@ struct AppState: Equatable {
     var roundNumber = 0
     var gameResults = GameResults.empty
     var gameStarted = false
-
     var scoreHistory = ScoreHistory.empty
+
+    var scoreHistoryModule: ScoreHistoryModule.ModuleState {
+        get {
+            .init(scoreHistory: scoreHistory)
+        }
+        set {
+            scoreHistory = newValue.scoreHistory
+        }
+    }
+
+    var gameModule: GameModule.ModuleState {
+        get {
+            .init(gameData: gameData,
+                  roundNumber: roundNumber,
+                  gameResults: gameResults,
+                  gameStarted: gameStarted,
+                  scoreHistory: scoreHistory)
+        }
+        set {
+            gameData = newValue.gameData
+            roundNumber = newValue.roundNumber
+            gameResults = newValue.gameResults
+            gameStarted = newValue.gameStarted
+            scoreHistory = newValue.scoreHistory
+        }
+    }
 }
 
 typealias AppEffect = Effect<AppAction, Never>
 typealias AppStore = Store<AppState, AppAction>
 
-let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
-    switch action {
-    case .answer(let isCorrect):
-        guard let gameData = state.gameData.data else {
-            return .none
-        }
-        let currentRound = gameData.rounds[state.roundNumber]
-        if isCorrect == currentRound.isTranslationCorrect {
-            state.gameResults.rightAnswers += 1
-        } else {
-            state.gameResults.wrongAnswers += 1
-        }
-        if state.roundNumber == gameData.rounds.count - 1 {
-            state.gameStarted = false
-            state.scoreHistory.activities.insert(
-                .init(timestamp: environment.dateProvider(), results: state.gameResults),
-                at: 0
-            )
-        } else {
-            state.roundNumber += 1
-        }
-    case .removeActivities(let indexSet):
-        indexSet.forEach {
-            state.scoreHistory.activities.remove(at: $0)
-        }
-    case .gameStarted(let started):
-        if started {
-            state.gameData = .loading
-            state.roundNumber = 0
-            state.gameResults = .empty
-            state.gameData = .loading
-        }
-        state.gameStarted = started
-        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
-    case .gameDataLoaded(let data):
-        state.gameData = data.map { .loaded($0) } ?? .failure
-    case .reloadGameData:
-        state.gameData = .loading
-        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
-    }
-    return .none
-}
-
-private func loadGameDataEffect(dataProvider: GameDataProvider) -> AppEffect {
-    dataProvider
-        .provide(10)
-        .map { AppAction.gameDataLoaded($0) }
-        .receive(on: DispatchQueue.main)
-        .eraseToEffect()
-}
+let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine([
+    ScoreHistoryModule.reducer.pullback(
+        state: \.scoreHistoryModule,
+        action: /AppAction.scoreHistoryModule,
+        environment: { _ in () }
+    ),
+    GameModule.reducer.pullback(
+        state: \.gameModule,
+        action: /AppAction.gameModule,
+        environment: { $0.gameModuleEnvironment }
+    ),
+])
 
 

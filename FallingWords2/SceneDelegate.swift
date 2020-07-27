@@ -7,7 +7,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let contentView = TabBarView(store:
-            Store(initialState: AppState(), reducer: appReducer, environment: AppEnvironment.live)
+            Store(initialState: AppState(),
+                  reducer: appReducer,
+                  environment: AppEnvironment.live)
         )
 
         if let windowScene = scene as? UIWindowScene {
