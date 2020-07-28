@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1703067F24D03B9F00E881C9 /* UUID+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1703067E24D03B9F00E881C9 /* UUID+.swift */; };
 		1714E1D624CF413E00043308 /* GameModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1CD24CF413E00043308 /* GameModule.framework */; };
 		1714E1DF24CF413E00043308 /* GameModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1714E1CF24CF413E00043308 /* GameModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1714E1E224CF413E00043308 /* GameModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1CD24CF413E00043308 /* GameModule.framework */; };
@@ -201,6 +202,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1703067E24D03B9F00E881C9 /* UUID+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+.swift"; sourceTree = "<group>"; };
 		1714E1CD24CF413E00043308 /* GameModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1714E1CF24CF413E00043308 /* GameModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameModule.h; sourceTree = "<group>"; };
 		1714E1D024CF413E00043308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				1752428D24C9E18600798865 /* ScoreHistory.swift */,
 				1715025824C88E34008AFA35 /* GameResults.swift */,
 				1715025624C886BC008AFA35 /* GameData.swift */,
+				1703067E24D03B9F00E881C9 /* UUID+.swift */,
 				1714E1FF24CF436D00043308 /* Info.plist */,
 			);
 			path = Common;
@@ -856,6 +859,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1703067F24D03B9F00E881C9 /* UUID+.swift in Sources */,
 				1714E20F24CF43FA00043308 /* GameResults.swift in Sources */,
 				1714E20824CF437E00043308 /* ScoreHistory.swift in Sources */,
 				1714E20924CF439000043308 /* GameData.swift in Sources */,

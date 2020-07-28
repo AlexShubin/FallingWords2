@@ -1,13 +1,18 @@
 import Foundation
 import ServiceKit
+import  ComposableArchitecture
 
 public struct ModuleEnvironment {
     var gameDataProvider: GameDataProvider
     var dateProvider:  () -> Date
+    var uuidProvider: () -> UUID
+    var mainQueue: AnySchedulerOf<DispatchQueue>
 
     public static let live = ModuleEnvironment(
         gameDataProvider: .live,
-        dateProvider: Date.init
+        dateProvider: Date.init,
+        uuidProvider: UUID.init,
+        mainQueue: DispatchQueue.main.eraseToAnyScheduler()
     )
 }
 
@@ -15,7 +20,9 @@ public struct ModuleEnvironment {
 extension ModuleEnvironment {
     public static let mock = ModuleEnvironment(
         gameDataProvider: .mock,
-        dateProvider: { Date(timeIntervalSince1970: 0) }
+        dateProvider: { Date(timeIntervalSince1970: 0) },
+        uuidProvider: { .fakeUUID },
+        mainQueue: DispatchQueue.main.eraseToAnyScheduler()
     )
 }
 #endif

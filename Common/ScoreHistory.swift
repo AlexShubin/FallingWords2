@@ -8,15 +8,14 @@ public struct ScoreHistory: Equatable {
     }
 
     public struct Activity: Identifiable, Equatable {
+        public let id: UUID
         public let timestamp: Date
         public let results: GameResults
 
-        public let id = UUID()
-
-        public init (
-            timestamp: Date,
-            results: GameResults
-        ) {
+        public init (id: UUID,
+                     timestamp: Date,
+                     results: GameResults) {
+            self.id = id
             self.timestamp = timestamp
             self.results = results
         }

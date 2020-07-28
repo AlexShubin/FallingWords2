@@ -45,7 +45,8 @@ struct GameStartView_Previews: PreviewProvider {
     static var previews: some View {
         var state = ModuleState()
         state.scoreHistory.activities = [
-            .init(timestamp: Date(),
+            .init(id: UUID(),
+                  timestamp: Date(),
                   results: .init(rightAnswers: 1, wrongAnswers: 1))
         ]
         return GameStartView(store: Store(initialState: state, reducer: reducer, environment: .live))

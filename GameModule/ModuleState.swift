@@ -65,7 +65,9 @@ public let reducer = Reducer<ModuleState, ModuleAction, ModuleEnvironment> { sta
         if state.roundNumber == gameData.rounds.count - 1 {
             state.gameStarted = false
             state.scoreHistory.activities.insert(
-                .init(timestamp: environment.dateProvider(), results: state.gameResults),
+                .init(id: environment.uuidProvider(),
+                      timestamp: environment.dateProvider(),
+                      results: state.gameResults),
                 at: 0
             )
         } else {
@@ -75,24 +77,23 @@ public let reducer = Reducer<ModuleState, ModuleAction, ModuleEnvironment> { sta
         state.gameData = .loading
         state.roundNumber = 0
         state.gameResults = .empty
-        state.gameData = .loading
         state.gameStarted = true
-        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
+        return loadGameDataEffect(environment: environment)
     case .gameFinished:
         state.gameStarted = false
     case .gameDataLoaded(let data):
         state.gameData = data.map { .loaded($0) } ?? .failure
     case .reloadGameData:
         state.gameData = .loading
-        return loadGameDataEffect(dataProvider: environment.gameDataProvider)
+        return loadGameDataEffect(environment: environment)
     }
     return .none
 }
 
-private func loadGameDataEffect(dataProvider: GameDataProvider) -> ModuleEffect {
-    dataProvider
+private func loadGameDataEffect(environment: ModuleEnvironment) -> ModuleEffect {
+    environment.gameDataProvider
         .provide(10)
-        .map { ModuleAction.gameDataLoaded($0) }
-        .receive(on: DispatchQueue.main)
+        .map(ModuleAction.gameDataLoaded)
+        .receive(on: environment.mainQueue)
         .eraseToEffect()
 }
