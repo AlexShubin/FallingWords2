@@ -12,13 +12,13 @@ public struct GameStartView: View {
         WithViewStore(store) { viewStore in
             VStack(spacing: 10) {
                 Button(action: {
-                    viewStore.send(.gameStarted(true))
+                    viewStore.send(.gameStarted)
                 }, label: { Text("Start game") })
                     .font(.largeTitle)
                 self.results
             }
             .sheet(isPresented: Binding.constant(viewStore.gameStarted),
-                   onDismiss: { viewStore.send(.gameStarted(false)) },
+                   onDismiss: { viewStore.send(.gameFinished) },
                    content: { GameView(store: self.store) })
         }
     }

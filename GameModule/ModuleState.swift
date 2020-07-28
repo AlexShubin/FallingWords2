@@ -4,7 +4,8 @@ import ServiceKit
 
 public enum ModuleAction: Equatable {
     case answer(isCorrect: Bool)
-    case gameStarted(Bool)
+    case gameStarted
+    case gameFinished
     case gameDataLoaded(GameData?)
     case reloadGameData
 }
@@ -70,15 +71,15 @@ public let reducer = Reducer<ModuleState, ModuleAction, ModuleEnvironment> { sta
         } else {
             state.roundNumber += 1
         }
-    case .gameStarted(let started):
-        if started {
-            state.gameData = .loading
-            state.roundNumber = 0
-            state.gameResults = .empty
-            state.gameData = .loading
-        }
-        state.gameStarted = started
+    case .gameStarted:
+        state.gameData = .loading
+        state.roundNumber = 0
+        state.gameResults = .empty
+        state.gameData = .loading
+        state.gameStarted = true
         return loadGameDataEffect(dataProvider: environment.gameDataProvider)
+    case .gameFinished:
+        state.gameStarted = false
     case .gameDataLoaded(let data):
         state.gameData = data.map { .loaded($0) } ?? .failure
     case .reloadGameData:
