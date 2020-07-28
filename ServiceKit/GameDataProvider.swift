@@ -3,7 +3,7 @@ import Combine
 import Common
 
 public struct GameDataProvider {
-    public let provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
+    public var provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
 
     static func make(
         translatedWordsLoader: TranslatedWordsLoader = .live,
@@ -13,7 +13,9 @@ public struct GameDataProvider {
         Self { roundsCount in
             return translatedWordsLoader.load()
                 .map { allWords -> GameData? in
-                    guard roundsCount <= allWords.count else { return nil }
+                    guard let allWords = allWords, roundsCount <= allWords.count else {
+                            return nil
+                    }
 
                     let allWordsShuffled = wordsShuffler(allWords)
                     let shuffledPrefix = Array(allWordsShuffled.prefix(roundsCount))
@@ -39,7 +41,6 @@ public struct GameDataProvider {
 
                     return GameData(rounds: roundsShuffler(result))
             }
-            .replaceError(with: nil)
             .eraseToAnyPublisher()
         }
     }
@@ -57,7 +58,7 @@ public struct GameDataProvider {
 }
 
 struct TranslatedWordsLoader {
-    let load: () -> AnyPublisher<[TranslatedWord], Error>
+    let load: () -> AnyPublisher<[TranslatedWord]?, Never>
 
     private static let urlSession: URLSession  = {
         let config = URLSessionConfiguration.default
@@ -72,7 +73,8 @@ struct TranslatedWordsLoader {
         
         return urlSession.dataTaskPublisher(for: url)
             .map { data, _ in data }
-            .decode(type: [TranslatedWord].self, decoder: JSONDecoder())
+            .decode(type: [TranslatedWord]?.self, decoder: JSONDecoder())
+            .replaceError(with: nil)
             .eraseToAnyPublisher()
     }
 }

@@ -28,20 +28,13 @@ class GameDataProviderTests: XCTestCase {
 }
 
 private extension TranslatedWordsLoader {
-    static let mock = Self {
-        .just([.init(eng: "1", spa: "1t"),
-               .init(eng: "2", spa: "2t"),
-               .init(eng: "3", spa: "3t"),
-               .init(eng: "4", spa: "4t")])
-    }
-}
-
-private extension Publisher {
-    static func just(_ output: Output) -> AnyPublisher<Output, Error> {
-        return Just(output)
-            .mapError(absurd)
+    static let mock = TranslatedWordsLoader {
+        Just([
+            TranslatedWord(eng: "1", spa: "1t"),
+            TranslatedWord(eng: "2", spa: "2t"),
+            TranslatedWord(eng: "3", spa: "3t"),
+            TranslatedWord(eng: "4", spa: "4t")
+            ])
             .eraseToAnyPublisher()
     }
 }
-
-private func absurd<A>(_ a: Never) -> A {}
