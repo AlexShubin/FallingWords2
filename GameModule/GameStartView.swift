@@ -11,9 +11,8 @@ public struct GameStartView: View {
     public var body: some View {
         WithViewStore(store) { viewStore in
             VStack(spacing: 10) {
-                Button(action: {
-                    viewStore.send(.gameStarted)
-                }, label: { Text("Start game") })
+                Button(action: { viewStore.send(.gameStarted) },
+                       label: { Text("Start game") })
                     .font(.largeTitle)
                 self.results
             }
