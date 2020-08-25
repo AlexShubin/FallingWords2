@@ -14,7 +14,7 @@ public struct GameDataProvider {
             return translatedWordsLoader.load()
                 .map { allWords -> GameData? in
                     guard let allWords = allWords, roundsCount <= allWords.count else {
-                            return nil
+                        return nil
                     }
 
                     let allWordsShuffled = wordsShuffler(allWords)
