@@ -22,16 +22,16 @@ struct GameView: View {
         AnyView(
             WithViewStore(store) { viewStore in
                 VStack(spacing: 20) {
-                    Text(gameData.rounds[viewStore.state.roundNumber].questionWord)
-                    Text(gameData.rounds[viewStore.state.roundNumber].answerWord)
+                    Text(gameData.rounds[viewStore.roundNumber].questionWord)
+                    Text(gameData.rounds[viewStore.roundNumber].answerWord)
                     HStack(spacing: 20) {
                         Button(action: { viewStore.send(.answer(isCorrect: true)) },
                                label: { Text("YAY 🤗") })
                         Button(action: { viewStore.send(.answer(isCorrect: false)) },
                                label: { Text("NAY 😡") })
                     }
-                    Text("Correct answer: \(viewStore.state.gameResults.rightAnswers)")
-                    Text("Wrong answers: \(viewStore.state.gameResults.wrongAnswers)")
+                    Text("Correct answer: \(viewStore.gameResults.rightAnswers)")
+                    Text("Wrong answers: \(viewStore.gameResults.wrongAnswers)")
                 }
                 .font(.title)
             }
