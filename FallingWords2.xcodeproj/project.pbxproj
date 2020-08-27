@@ -54,6 +54,7 @@
 		17D100E524CF54DE00ED4FA4 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1714E1FC24CF436D00043308 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17D100E924CF55BC00ED4FA4 /* ServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; };
 		17D100EA24CF55BC00ED4FA4 /* ServiceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17D100C524CF546700ED4FA4 /* ServiceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17F432F024F791B000C07EB7 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F432EF24F791B000C07EB7 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +248,7 @@
 		17D100C824CF546700ED4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D100CD24CF546700ED4FA4 /* ServiceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServiceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D100D624CF546700ED4FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F432EF24F791B000C07EB7 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				1714E21E24CF487F00043308 /* ScoreHistoryModule.h */,
+				17F432EF24F791B000C07EB7 /* DateFormatter.swift */,
 				1752428F24C9E34000798865 /* ScoreHistoryView.swift */,
 				1714E23A24CF48B900043308 /* ModuleState.swift */,
 				1714E21F24CF487F00043308 /* Info.plist */,
@@ -871,6 +874,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1714E23924CF48AD00043308 /* ScoreHistoryView.swift in Sources */,
+				17F432F024F791B000C07EB7 /* DateFormatter.swift in Sources */,
 				1714E23B24CF48B900043308 /* ModuleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,29 +3,23 @@ import ComposableArchitecture
 
 public struct ScoreHistoryView: View {
     let store: ModuleStore
+    let viewStateConverter = ScoreHistoryViewStateConverter.live
 
     public init(store: ModuleStore) {
         self.store = store
     }
 
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter
-    }()
-
     public var body: some View {
-        WithViewStore(self.store) { viewStore in
+        WithViewStore(store.scope(state: viewStateConverter.convert)) { viewStore in
             NavigationView {
                 List {
-                    ForEach(viewStore.scoreHistory.activities) { activity in
+                    ForEach(viewStore.activities) { activity in
                         VStack {
-                            Text("Completed at: \(self.formatter.string(from: activity.timestamp))")
+                            Text("Completed at: \(activity.time))")
                                 .foregroundColor(.blue)
-                            Text("Correct answers: \(activity.results.rightAnswers)")
+                            Text("Correct answers: \(activity.rightAnswers)")
 
-                            Text("Wrong answers: \(activity.results.wrongAnswers)")
+                            Text("Wrong answers: \(activity.wrongAnswers)")
                         }
                         .padding(4)
                     }
@@ -37,6 +31,34 @@ public struct ScoreHistoryView: View {
             }
         }
     }
+}
+
+struct ScoreHistoryViewState: Equatable {
+    let activities: [Activity]
+
+    struct Activity: Identifiable, Equatable {
+        let id: UUID
+        let time: String
+        let rightAnswers: Int
+        let wrongAnswers: Int
+    }
+}
+
+struct ScoreHistoryViewStateConverter {
+    let convert: (ModuleState) -> ScoreHistoryViewState
+
+    static func make(dateFormatter: ModuleDateFormatter) -> ScoreHistoryViewStateConverter {
+        ScoreHistoryViewStateConverter {
+            ScoreHistoryViewState(activities: $0.scoreHistory.activities.map {
+                ScoreHistoryViewState.Activity(id: $0.id,
+                                               time: dateFormatter.format($0.timestamp),
+                                               rightAnswers: $0.results.rightAnswers,
+                                               wrongAnswers: $0.results.wrongAnswers)
+            })
+        }
+    }
+
+    static let live = ScoreHistoryViewStateConverter.make(dateFormatter: ModuleDateFormatter.medium)
 }
 
 struct ScoreHistoryView_Previews: PreviewProvider {
