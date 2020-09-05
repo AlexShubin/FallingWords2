@@ -7,7 +7,6 @@ public enum ModuleAction: Equatable {
     case gameStarted
     case gameFinished
     case gameDataLoaded(GameData?)
-    case reloadGameData
 }
 
 public enum GameDataState: Equatable {
@@ -83,9 +82,6 @@ public let reducer = Reducer<ModuleState, ModuleAction, ModuleEnvironment> { sta
         state.gameStarted = false
     case .gameDataLoaded(let data):
         state.gameData = data.map { .loaded($0) } ?? .failure
-    case .reloadGameData:
-        state.gameData = .loading
-        return loadGameDataEffect(environment: environment)
     }
     return .none
 }

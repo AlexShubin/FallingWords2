@@ -44,7 +44,7 @@ struct GameView: View {
                 VStack(spacing: 20) {
                     Text("Oops! Something went wrong!")
                         .font(.subheadline)
-                    Button(action: { viewStore.send(.reloadGameData) },
+                    Button(action: { viewStore.send(.gameStarted) },
                            label: { Text("Try again") })
                         .font(.title)
                 }

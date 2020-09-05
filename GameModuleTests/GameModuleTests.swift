@@ -7,20 +7,24 @@ import Combine
 class GameModuleTests: XCTestCase {
 
     let scheduler = DispatchQueue.testScheduler
+    var environment: ModuleEnvironment!
+
+    override func setUp() {
+        super.setUp()
+
+        environment = .mock
+        environment.mainQueue = scheduler.eraseToAnyScheduler()
+    }
 
     func testGameHappyPath() {
-        var environment = ModuleEnvironment.mock
-
         let testGameData = GameData(rounds: [
             .init(questionWord: "1", answerWord: "1t", isTranslationCorrect: true),
             .init(questionWord: "2", answerWord: "2t", isTranslationCorrect: true)
         ])
         let testDate = Date(timeIntervalSince1970: 10)
 
-        environment.dateProvider = {
-            testDate
-        }
-        environment.mainQueue = scheduler.eraseToAnyScheduler()
+        environment.dateProvider = { testDate }
+
         environment.gameDataProvider.provide = { _ in
             Just(testGameData).eraseToAnyPublisher()
         }
@@ -60,9 +64,6 @@ class GameModuleTests: XCTestCase {
     }
 
     func testGameUnhappyPath() {
-        var environment = ModuleEnvironment.mock
-
-        environment.mainQueue = scheduler.eraseToAnyScheduler()
         environment.gameDataProvider.provide = { _ in
             Just(nil).eraseToAnyPublisher()
         }
