@@ -4,11 +4,7 @@ import Combine
 import Common
 
 class GameDataProviderTests: XCTestCase {
-    let sut = GameDataProvider.make(
-        translatedWordsLoader: .mock,
-        wordsShuffler: { $0 },
-        roundsShuffler: { $0 }
-    )
+    let sut = GameDataProvider.make(translatedWordsLoader: .mock, randomNumberGenerator: .mock)
 
     var cancellable: Cancellable?
 

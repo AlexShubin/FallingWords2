@@ -6,18 +6,19 @@ public struct GameDataProvider {
     public var provide: (_ roundsCount: Int) -> AnyPublisher<GameData?, Never>
 
     static func make(
-        translatedWordsLoader: TranslatedWordsLoader = .live,
-        wordsShuffler: @escaping ([TranslatedWord]) -> [TranslatedWord] = { $0.shuffled() },
-        roundsShuffler: @escaping ([RoundData]) -> [RoundData] = { $0.shuffled() }
+        translatedWordsLoader: TranslatedWordsLoader,
+        randomNumberGenerator: GameRandomNumberGenerator
     ) -> GameDataProvider {
-        Self { roundsCount in
-            return translatedWordsLoader.load()
+        var randomNumberGenerator = randomNumberGenerator
+
+        return Self { roundsCount in
+            translatedWordsLoader.load()
                 .map { allWords -> GameData? in
                     guard let allWords = allWords, roundsCount <= allWords.count else {
                         return nil
                     }
 
-                    let allWordsShuffled = wordsShuffler(allWords)
+                    let allWordsShuffled = allWords.shuffled(using: &randomNumberGenerator)
                     let shuffledPrefix = Array(allWordsShuffled.prefix(roundsCount))
                     let shuffledSuffix = Array(allWordsShuffled.suffix(roundsCount))
 
@@ -39,13 +40,14 @@ public struct GameDataProvider {
                         }
                     }
 
-                    return GameData(rounds: roundsShuffler(result))
+                    return GameData(rounds: result.shuffled(using: &randomNumberGenerator))
             }
             .eraseToAnyPublisher()
         }
     }
 
-    public static let live = GameDataProvider.make()
+    public static let live = GameDataProvider.make(translatedWordsLoader: .live,
+                                                   randomNumberGenerator: .live)
 
     #if DEBUG
     public static let mock = GameDataProvider { _ in
@@ -57,10 +59,28 @@ public struct GameDataProvider {
     #endif
 }
 
+struct GameRandomNumberGenerator: RandomNumberGenerator {
+    let random: () -> UInt64
+
+    func next() -> UInt64 {
+        random()
+    }
+
+    static let live = GameRandomNumberGenerator(
+        random: { UInt64.random(in: 0...UInt64.max) }
+    )
+
+    #if DEBUG
+    static let mock = GameRandomNumberGenerator(
+        random: { 1 }
+    )
+    #endif
+}
+
 struct TranslatedWordsLoader {
     let load: () -> AnyPublisher<[TranslatedWord]?, Never>
 
-    private static let urlSession: URLSession  = {
+    private static let urlSession: URLSession = {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
